@@ -348,7 +348,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .main-content {
     grid-template-columns: 1fr;
     padding: 12px;
@@ -377,7 +377,7 @@
   }
 }
 /* Add to existing file */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .main-content {
     grid-template-columns: 1fr;
   }

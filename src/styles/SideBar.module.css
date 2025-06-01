@@ -311,7 +311,7 @@
   z-index: 1001;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1160px) {
   .menuToggle {
     display: block;
   }

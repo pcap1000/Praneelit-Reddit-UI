@@ -27,7 +27,7 @@ const CommunityCard = ({ posts = [] }) => {
       <div className="header">
         <div className="banner-container">
           <img 
-            src="https://styles.redditmedia.com/t5_2qhv6/styles/mobileBannerImage_a8vedswpvnze1.png?width=2176&frame=1&auto=webp&s=a4ccff772046e3c7116803aee395c06f09a193bd"  
+            src="https://styles.redditmedia.com/t5_2rn7o/styles/bannerBackgroundImage_k2h8abnl1ia21.png?width=2176&frame=1&auto=webp&s=3254d1b8d9fe42d940ea7d4fa7f728138416e05f"  
             alt="Community banner" 
             className="banner-image"
           />

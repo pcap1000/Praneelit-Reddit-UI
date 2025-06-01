@@ -15,7 +15,7 @@ function AppLayoutAbout() {
 
 	  Link:'/about-post-1',
       title: "I’m from Bangalore, born and raised. Can’t say I love this place, but there are parts of it and the people here that I really do. The chaos, the food, the weirdly unpredictable weather—sometimes annoying, but it has its own charm.",
-      image: "https://i.pinimg.com/736x/c0/6f/1d/c06f1d99bb309a6610adf473c16df51a.jpg",
+      image: "https://i.pinimg.com/736x/82/73/c2/8273c22a63cc14739f6062753abd2ef7.jpg",
 
     },
   ]

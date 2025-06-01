@@ -15,8 +15,8 @@ function AppLayoutProject() {
       id: "1",
       author: "mouthwithnoteeth",
 	  Link:'/project-post-1',
-      title: "Optimizing Time-Slotted Deliveries for Post Offices and Courier Companies Managing time-window-based deliveries has always been a challenge for post offices and courier companies",
-      image: "https://i.pinimg.com/736x/68/4f/d2/684fd22583e38144212f1cea6b6149db.jpg",
+      title: "Project - Optimizing Time-Slotted Deliveries for Post Offices and Courier Companies Managing time-window-based deliveries has always been a challenge for post offices and courier companies",
+      image: "https://miro.medium.com/v2/resize:fit:1400/1*2tsZFK4GIUq1fHX6UpC8xA.jpeg",
     },
 
   ]
