@@ -7,7 +7,7 @@ function Logo() {
       <Link to="/">
         <img
           className={styles.logo}
-          src="./img/reddit-logo-transparent.webp"
+          src="./img/logoimage.png"
           alt="Reddit Logo"
         />
       </Link>

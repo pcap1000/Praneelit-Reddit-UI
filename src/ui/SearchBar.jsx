@@ -15,7 +15,7 @@ function SearchBar() {
         <div className={styles.searchInputContainer}>
           <input
             className={styles.searchInput}
-            placeholder="Search Reddit"
+            placeholder="This search bar does absolutely nothing."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
