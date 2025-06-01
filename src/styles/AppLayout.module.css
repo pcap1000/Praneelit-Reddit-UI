@@ -1,6 +1,6 @@
-.container {
-  display: flex;
-}
+/* .container {
+  display: flex; 
+} */
 .container {
   display: flex;
   flex-direction: column;
@@ -13,4 +13,34 @@
 }
 .post {
   margin-top: 0%;
+} 
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #121212;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+  margin-top: 6rem; /* Header height */
+  position: relative;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 20vw; /* Sidebar width */
+  overflow-x: hidden;
+  width: 80vw;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+    padding: 15px;
+     width: 100vw;
+  }
 }

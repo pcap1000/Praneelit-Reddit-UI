@@ -1,33 +1,36 @@
-import { Outlet } from 'react-router-dom';
+
+
+
+
+
+import { Link, Outlet } from 'react-router-dom';
 import styles from '../styles/AppLayout.module.css';
 import Header from './Header';
 import SideBar from './SideBar';
-import CommunityProfile from './CommunityProfile';
-import ProfileHeader from './ProfileHeader';
-import SocialPost from './SocialPost';
-import { Analytics } from "@vercel/analytics/react"
-
+import CommunityCard from "./community-card"
 
 function AppLayoutProject() {
-	return (
-		<div>
-			<Header />
-			<main className={styles.container}>
-			<ProfileHeader/>
-				<SideBar />
-				<Analytics />
-				<CommunityProfile/>
-				<SocialPost
-					title="My Projects"
-					content="Optimizing Time-Slotted Deliveries for Post Offices and Courier Companies Managing time-window-based deliveries has always been a challenge for post offices and courier companies"
-					username="praneelchetty"
-					avatar="https://i.pinimg.com/474x/74/9d/48/749d48da0ae85583aee308f6947d5179.jpg"
-					postId="project-post-1"
-				/>
-				<Outlet />
-			</main>
-		</div>
-	);
+  const samplePosts = [
+    {
+      id: "1",
+      author: "mouthwithnoteeth",
+	  Link:'/project-post-1',
+      title: "Optimizing Time-Slotted Deliveries for Post Offices and Courier Companies Managing time-window-based deliveries has always been a challenge for post offices and courier companies",
+      image: "https://i.pinimg.com/736x/68/4f/d2/684fd22583e38144212f1cea6b6149db.jpg",
+    },
+
+  ]
+  return (
+    <div className={styles.app}>
+      <Header />
+      <main className={styles.container}>
+        <SideBar />
+        <div className={styles.content}>
+          <CommunityCard posts={samplePosts} />
+        </div>
+      </main>
+    </div>
+  );
 }
 
 export default AppLayoutProject;

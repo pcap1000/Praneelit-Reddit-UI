@@ -1,14 +1,30 @@
 .logoContainer {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  align-content: center;
+
 }
 
 .logo {
   height: 7rem;
-  margin-left: 25%;
+  /* margin-left: 25%; */
+  max-height: 100%;
 }
-.name{
-  /* height: 5rem; */
-  margin-left: 10%;
+
+.name {
+  /* margin-left: 10%; */
   width: 12rem;
+  max-width: 100%;
+}
+
+@media (max-width: 770px) {
+  .logoContainer {
+    flex-direction: row;
+    justify-content: space-around;
+    padding-left: 2rem; 
+  }
+
+
 }

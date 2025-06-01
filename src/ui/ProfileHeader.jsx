@@ -1,66 +1,93 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from '../styles/ProfileHeader.module.css';
 
 const ProfileHeader = () => {
-  const [activeTooltip, setActiveTooltip] = useState(null);
+  const headerRef = useRef(null);
+  const [headerStyle, setHeaderStyle] = useState({
+    position: 'relative',
+    marginTop: '0',
+    zIndex: '100'
+  });
 
-  const handleClick = (button) => {
-    setActiveTooltip(activeTooltip === button ? null : button);
+  const calculateHeaderPosition = () => {
+    const viewportHeight = window.innerHeight;
+    const viewportWidth = window.innerWidth;
+    const isMobile = viewportWidth <= 768;
+
+    if (isMobile) {
+      // Mobile - fixed header with content padding
+      setHeaderStyle({
+        position: 'absolute',
+        top: '0',
+        marginTop: '0',
+        zIndex: '100',
+        width: '100%',
+        background: '#121212',
+        top: '6.16vh',
+        marginBottom: '-17.82vh',
+    });
+
+    // Add padding to the first content element
+    const contentElement = document.querySelector('.content-container');
+    if (contentElement) {
+      const headerHeight = headerRef.current?.offsetHeight || 120;
+      contentElement.style.paddingTop = `${headerHeight + 20}px`;
+    }
+  } else {
+    // Desktop - dynamic negative margin based on viewport
+    const baseMargin = Math.min(viewportHeight * 0.0005, 200); // Cap at 200px
+  setHeaderStyle({
+    position: 'relative',
+    marginTop: `-${baseMargin}px`,
+    zIndex: '100'
+  });
+}
   };
 
-  return (
-    <div className={styles.body}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <div className={styles.banner}>
-            <img 
-              src="https://styles.redditmedia.com/t5_2qmjl/styles/bannerBackgroundImage_2qok6gpoiud71.png?width=2176&frame=1&auto=webp&s=383b34314d2cf814fb3f331fa0856128c673fb35"  
-              alt="Profile Banner" 
-              className={styles.bannerImg}
-            />
-          </div>
-          <div className={styles.profileSection}>
-            <div className={styles.profilePicture}>
-              <img 
-                src="./img/praneelpic.jpeg" 
-                alt="Profile Picture" 
-                className={styles.profilePictureImg}
-              />
-            </div>
-            <div className={styles.profileName}>r/praneelchetty</div>
-          </div>
-          <div className={styles.filters}>
-            <button 
-              className={styles.filterButton} 
-              data-tooltip="Fake" 
-              onClick={() => handleClick('top')}
-            >
-              Top
-              <span className={styles.filterButtonAfter}></span>
-              {activeTooltip === 'top' && <div className={styles.tooltip}>Fake</div>}
-            </button>
-            <button 
-              className={styles.filterButton} 
-              data-tooltip="Fake" 
-              onClick={() => handleClick('allTime')}
-            >
-              All Time
-              <span className={styles.filterButtonAfter}></span>
-              {activeTooltip === 'allTime' && <div className={styles.tooltip}>Fake</div>}
-            </button>
-            <button 
-              className={`${styles.filterButton} ${styles.menuButton}`} 
-              data-tooltip="Fake" 
-              onClick={() => handleClick('menu')}
-            >
-              ⋮
-              {activeTooltip === 'menu' && <div className={styles.tooltip}>Fake</div>}
-            </button>
-          </div>
+useEffect(() => {
+  calculateHeaderPosition();
+
+  const handleResize = () => {
+    requestAnimationFrame(calculateHeaderPosition);
+  };
+
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
+
+return (
+  <div
+    className={styles.header}
+    ref={headerRef}
+    style={headerStyle}
+  >
+    <div className={styles.banner}>
+      <img src="./img/praneelitorg.png" alt="Banner" className={styles.bannerLogo} />
+    </div>
+
+    <div className={styles.navBar}>
+      <div className={styles.leftSection}>
+        <div className={styles.logoCircle}>
+          <img src="./img/praneelpic.jpeg" alt="Profile" className={styles.logoImage} />
+        </div>
+        <div className={styles.subredditInfo}>
+          <h1 className={styles.subredditName}>r/praneelchetty</h1>
         </div>
       </div>
+
+      <div className={styles.rightSection}>
+        <button className={styles.createPostButton}>
+          <span className={styles.plusIcon}>+</span>
+          Create Post
+        </button>
+        <button className={styles.joinButton}>Join</button>
+        <button className={styles.moreOptionsButton}>
+          <span className={styles.dots}>•••</span>
+        </button>
+      </div>
     </div>
-  );
+  </div>
+);
 };
 
 export default ProfileHeader;

@@ -1,318 +1,323 @@
-.body {
-  margin: 0;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #121212;
-  color: #fff;
-  display: flex;
-  justify-content: center;
+.header {
   width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  margin-top: -15%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  width: 77vw;
+  margin-left: 22vw;
+  /* margin-bottom: 58vh; */
+  max-width: 1000px;
 }
 
-.container {
-  width: 60%;
-  max-width: 1200px;
+.banner {
+  background-color: #121212;
+  /* Dark background instead of Lakers gold */
+  height: 160px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  border: 1rem solid #1a1a1b;
+  /* Dark gray border */
+  -webkit-border-radius: 10px 10px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
+  flex-wrap: wrap;
+}
+
+.bannerLogo {
+  height: 80px;
+}
+
+.navBar {
+  background-color: #1a1a1b;
+  /* Dark gray instead of Lakers purple */
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  color: white;
+  -webkit-border-radius: 0px 0px 10px 10px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+}
+
+.logoCircle {
+  width: 80px;
+  height: 80px;
+  background-color: #121212;
+  /* Dark background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+  border: 3px solid #1a1a1b;
+}
+
+.logoImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  /* Make the profile picture circular */
+}
+
+.subredditInfo {
+  display: flex;
+  align-items: baseline;
+  margin-left: 12px;
+}
+
+.subredditName {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  margin-right: 8px;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.createPostButton {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.plusIcon {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.joinButton {
+  background-color: #ff4500;
+  /* Orange instead of purple */
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.moreOptionsButton {
+  background-color: transparent;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dots {
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* Hover effects */
+.createPostButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.joinButton:hover {
+  background-color: #ff5714;
+  /* Slightly lighter orange */
+}
+
+.moreOptionsButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 480px) {
+  .rightSection {
+    gap: 8px;
+  }
+
+  .createPostButton span {
+    display: none;
+    /* Hide "+" icon on small screens */
+  }
+
+  .createPostButton::after {
+    content: "Post";
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+
+    padding: 0;
+    margin-left: 0%;
+    width: 100%;
+    margin-top: -7vh;
+    border: none;
+  }
+
+  .banner {
+    height: 120px;
+    background-color: #121212;
+    border: none;
+  }
+
+  .bannerLogo {
+    height: 60px;
+  }
+
+  .navBar {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    background-color: #1a1a1b;
+    border-radius: 0px;
+  }
+
+  .leftSection {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .logoCircle {
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    border: 3px solid #1a1a1b;
+  }
+
+  .logoImage {
+    width: 32px;
+    height: 32px;
+  }
+
+  .subredditInfo {
+    flex-direction: column;
+    margin-left: 12px;
+    align-items: flex-start;
+  }
+
+  .subredditName {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .memberCount {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    /* Add this to show member count */
+  }
+
+  .rightSection {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .createPostButton {
+    flex-grow: 1;
+    justify-content: center;
+    padding: 8px;
+  }
+
+  .joinButton {
+    flex-grow: 1;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .moreOptionsButton {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .header {
   width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  transition: margin-top 0.3s ease;
 }
 
-.banner {
-  width: 100vw;
-  height: 180px;
-  position: relative;
-  overflow: hidden;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  /* border-radius: 20px;  */
-  /* border-radius: 20px;  */
-
+/* For sticky behavior */
+.stickyHeader {
+  position: sticky;
+  top: 0vh;
+  background-color: #121212;
+  padding-bottom: 1vh;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.bannerImg {
-  width: 58%;
-  height: 100%;
-  object-fit: cover;
-  margin-top: 3%;
-  margin-left: 18%;
-  /* border-radius: 10px; */
-  
-}
-
-.profileSection {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-top: -35px;
-  padding-left: 20px;
-  align-self: flex-start;
-  width: 100%;
-  max-width: 800px;
+/* Ensure content flows properly below header */
+.contentWrapper {
+  margin-top: 20px;
   position: relative;
   z-index: 1;
 }
 
-.profilePicture {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  border: 4px solid #121212;
+/* Add to your ProfileHeader.module.css */
+.header {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.banner {
+  width: 100%;
+  max-height: 180px;
   overflow: hidden;
 }
 
-.profilePictureImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.profileName {
-  color: #fff;
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-top: 35px;
-  font-family: 'Reddit Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
-
-.filters {
+.navBar {
   display: flex;
-  gap: 8px;
-  margin-top: 20px;
-  padding: 0 20px;
-  align-self: flex-start;
-  width: 100%;
-  max-width: 800px;
-}
-
-.filterButton {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 4px;
+  padding: 10px 20px;
+  background-color: #121212;
+}
+
+/* For the content container that follows the header */
+.content-container {
   position: relative;
+  z-index: 1;
 }
 
-.filterButton:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-.filterButtonAfter {
-  content: '▼';
-  font-size: 8px;
-  margin-top: 2px;
-  margin-left: 4px;
-}
-
-.menuButton .filterButtonAfter {
-  display: none;
-}
-
-/* Large Desktop Screens (1440px and above) */
-@media (min-width: 1440px) {
-  .container {
-    max-width: 1400px;
+/* Mobile specific */
+@media (max-width: 768px) {
+  .header {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
 
   .banner {
-    height: 200px;
-  }
-
-  .profilePicture {
-    width: 80px;
-    height: 80px;
-  }
-
-  .profileName {
-    font-size: 3rem;
+    max-height: 120px;
   }
 }
 
-/* Desktop Screens (1024px to 1439px) */
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .container {
-    max-width: 1200px;
-  }
-
-  .banner {
-    height: 180px;
-  }
+.header {
+  width: 100%;
+  transition: margin-top 0.3s ease;
+  width: 70vw;
 }
 
-/* Tablet Landscape (768px to 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .body {
-    padding: 10px;
-  }
-
-  .banner {
-    height: 160px;
-  }
-
-  .profileName {
-    font-size: 2rem;
-  }
-
-  .profileSection {
-    padding-left: 16px;
-  }
-
-  .filters {
-    padding: 0 16px;
-  }
-}
-
-/* Tablet Portrait (481px to 767px) */
-@media (min-width: 481px) and (max-width: 767px) {
-  .body {
-    padding: 8px;
-  }
-
-  .banner {
-    height: 140px;
-  }
-
-  .profileName {
-    font-size: 1.8rem;
-    margin-top: 25px;
-  }
-
-  .profilePicture {
-    width: 64px;
-    height: 64px;
-  }
-
-  .filters {
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-}
-
-/* Mobile Screens (480px and below) */
 @media (max-width: 480px) {
-  .body {
-    padding: 0;
-    margin-top: -95%;
-
-  }
-
-  .container {
-    width: 100%; /* Change from 60% to 100% for mobile */
-  }
-
-  .banner {
-    width: 100vw; /* Full viewport width */
-    height: 410px;
-    margin-left: calc(-50vw + 50%); /* Center the banner */
-    margin-right: calc(-50vw + 50%);
-    position: relative;
-    
-  }
-
-  .bannerImg {
+  .header {
+    position: absolute;
+    top: 6.16vh;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-left: 0%;
+    /* background: rgb(18, 18, 18); */
+    margin-bottom: -17.82vh;
   }
-
-  .profileSection {
-    margin-top: -25px;
-    padding-left: 12px;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .profilePicture {
-    width: 56px;
-    height: 56px;
-  }
-
-  .profileName {
-    font-size: 2.5rem;
-    margin-top: 20px;
-  }
-
-  .filters {
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 0 12px;
-    margin-top: 15px;
-    width: 100%;
-    margin-bottom: 3%;
-  }
-
-  .filterButton {
-    padding: 4px 10px;
-    font-size: 12px;
-  }
-}
-
-/* Small Mobile Screens (320px and below) */
-@media (max-width: 320px) {
-  .banner {
-    height: 100px; /* Slightly smaller height for very small screens */
-  }
-
-  .profileName {
-    font-size: 1.2rem;
-  }
-
-  .profilePicture {
-    width: 48px;
-    height: 48px;
-  }
-
-  .filters {
-    margin-top: 10px;
-  }
-}
-/* Tooltip Styling */
-.tooltip {
-  position: absolute;
-  background-color: #1a1a1b;
-  color: white;
-  font-size: 14px;
-  padding: 6px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 1;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: opacity 0.2s ease-in-out;
-}
-
-[data-tooltip]:hover::before {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1a1a1b;
-  color: white;
-  font-size: 14px;
-  padding: 6px 8px;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 1;
-  transition: opacity 0.2s ease-in-out;
 }

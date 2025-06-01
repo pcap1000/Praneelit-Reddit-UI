@@ -17,7 +17,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     max-height: 70vh; /* Changed from calc(108vh - 120px) */
-    margin-top: 75%; /* Reduced from 85% */
+    margin-top: 42vh; /* Reduced from 85% */
     pointer-events: auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     left: 5px;
@@ -42,7 +42,7 @@
     overflow-y: auto;
     pointer-events: auto;
     margin-left: 78%;
-    margin-top: 6%;
+    margin-top: 42vh; /* Adjusted to align with the new top position */
   }
   
   .profileContainer::-webkit-scrollbar {

@@ -297,3 +297,181 @@
 .active {
   color: #ff4500;
 }
+
+.postsContainer {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+.post {
+  flex: 1;
+  max-width: 720px;
+  background-color: #121212;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 5%;
+}
+
+/* Keep all your existing .post styles below */
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.profileImg {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.username {
+  color: #d7dadc;
+  font-weight: 500;
+}
+
+.time {
+  color: #818384;
+}
+
+.moreBtn {
+  background: none;
+  border: none;
+  color: #818384;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  letter-spacing: 1px;
+}
+
+.title {
+  color: #d7dadc;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.postLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content {
+  color: #d7dadc;
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.voteGroup {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 0 2px;
+  height: 24px;
+}
+
+.voteBtn {
+  background: none;
+  border: none;
+  color: #818384;
+  padding: 0 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.voteCount {
+  color: #818384;
+  font-size: 12px;
+  min-width: 16px;
+  text-align: center;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #818384;
+  font-size: 19px;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 12px;
+  height: 24px;
+}
+
+.actionBtn svg {
+  stroke-width: 1.5;
+}
+
+.actionBtn:hover,
+.voteBtn:hover,
+.moreBtn:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.activeUp {
+  color: #ff4500;
+}
+
+.activeDown {
+  color: #7193ff;
+}
+
+.active {
+  color: #ff4500;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .postsContainer {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .post {
+    width: 100%;
+    margin-top: 10%;
+    margin-left: 0;
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 14px !important;
+  }
+
+  .content {
+    font-size: 12px !important;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .actionBtn {
+    font-size: 16px !important;
+    padding: 2px 6px !important;
+  }
+}
