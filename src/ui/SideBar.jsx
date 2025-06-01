@@ -41,7 +41,7 @@ function SideBar() {
       />
 
       <button className={styles.menuToggle} onClick={toggleMenu}>
-        <FaBars />
+        <FaBars size={20}  />
       </button>
 
       <div className={`${styles.sideBar} ${isOpen ? styles.open : ''}`}>
