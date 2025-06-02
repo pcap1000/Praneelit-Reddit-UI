@@ -62,7 +62,7 @@
 .join-btn {
   padding: 8px 16px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -592,7 +592,7 @@ border-radius: 0px 0px 10px 10px;
 .join-btn {
   padding: 8px 16px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
