@@ -71,22 +71,22 @@
 .create-post-btn {
   background-color: transparent;
   color: #ffffff;
-  border: 2px solid #fd4400;
+  border: 2px solid #df121c;
 }
 
 .create-post-btn:hover {
-  background-color: #fd4400;
+  background-color: #df121c;
   color: white;
 }
 
 .join-btn {
   color: #ffffff;
-  border: 2px solid #fd4400;
+  border: 2px solid #df121c;
   color: white;
 }
 
 .join-btn:hover {
-  background-color: #fd4400;
+  background-color: #df121c;
 }
 
 /* Main Content */

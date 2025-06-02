@@ -71,21 +71,21 @@
 .create-post-btn {
   background-color: transparent;
   color: #ffffff;
-  border: 2px solid #fd4400;
+  border: 2px solid #df121c;
 }
 
 .create-post-btn:hover {
-  background-color: #fd4400;
+  background-color: #df121c;
   color: white;
 }
 
 .join-btn {
-  background-color: #fd4400;
+  background-color: #df121c;
   color: white;
 }
 
 .join-btn:hover {
-  background-color: #fd4400;
+  background-color: #df121c;
 }
 
 /* Main Content */
@@ -601,24 +601,24 @@ border-radius: 0px 0px 10px 10px;
 .create-post-btn {
   background-color: transparent;
   color: #ffffff;
-  border: 2px solid #fd4400;
+  border: 2px solid #df121c;
 }
 
 .create-post-btn:hover,
 .create-post-btn.active {
-  background-color: #fd4400;
+  background-color: #df121c;
   color: white;
 }
 
 .join-btn {
   background-color: transparent;
   color: #ffffff;
-  border: 2px solid #fd4400;
+  border: 2px solid #df121c;
 }
 
 .join-btn:hover,
 .join-btn.active {
-  background-color: #fd4400;
+  background-color: #df121c;
   color: white;
 }
 
