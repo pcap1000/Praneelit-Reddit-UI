@@ -84,7 +84,7 @@ function SideBar() {
 
         <div className={styles.musicPlayer}>
           <img
-            src="https://i.pinimg.com/736x/77/af/8a/77af8ab16e02a679ebd3d53d4f881172.jpg"
+            src="https://i.pinimg.com/736x/55/b0/d0/55b0d00ce6424469876d62fc4bec4881.jpg"
             alt="Enemy Song Cover"
             className={styles.songCover}
           />
