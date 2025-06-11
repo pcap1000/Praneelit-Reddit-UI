@@ -34,7 +34,8 @@
   padding: 20px;
   margin-left: 20vw; /* Sidebar width */
   overflow-x: hidden;
-  width: 80vw;
+  width: 75vw;
+  background-color: #121212;
 }
 
 @media (max-width: 768px) {

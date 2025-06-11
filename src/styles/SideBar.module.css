@@ -284,11 +284,11 @@
 
 .sideBar {
   position: fixed;
-  top: 6rem; /* Header height */
+  top: 6rem; 
   left: 0;
   height: calc(100vh - 6rem);
   width: 20vw;
-  min-width: 250px;
+  max-width: 300px;
   background-color: #0E1113;
   border-right: 1px solid #333948;
   display: flex;
