@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "../styles/SideBar.module.css";
 import { FaUserAlt, FaProjectDiagram, FaPenNib, FaBars, FaPlay, FaPause } from "react-icons/fa";
@@ -7,10 +7,14 @@ function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
+
   const audioRef = useRef(null);
-  const location = useLocation(); // Get current route
+  const sideBarRef = useRef(null);
+  const menuBtnRef = useRef(null);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
   const togglePlay = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -31,6 +35,24 @@ function SideBar() {
     setProgress(manualChange);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isOpen &&
+        sideBarRef.current &&
+        !sideBarRef.current.contains(event.target) &&
+        !menuBtnRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
     <>
       <audio 
@@ -40,11 +62,11 @@ function SideBar() {
         onEnded={() => setIsPlaying(false)}
       />
 
-      <button className={styles.menuToggle} onClick={toggleMenu}>
-        <FaBars size={20}  />
+      <button ref={menuBtnRef} className={styles.menuToggle} onClick={toggleMenu}>
+        <FaBars size={20} />
       </button>
 
-      <div className={`${styles.sideBar} ${isOpen ? styles.open : ''}`}>
+      <div ref={sideBarRef} className={`${styles.sideBar} ${isOpen ? styles.open : ''}`}>
         <nav className={styles.navMenu}>
           <ul>
             <li>
