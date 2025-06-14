@@ -7,14 +7,11 @@ function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-
   const audioRef = useRef(null);
-  const sideBarRef = useRef(null);
-  const menuBtnRef = useRef(null);
-  const location = useLocation();
+  const sidebarRef = useRef(null); // Reference for the sidebar container
+  const location = useLocation(); // Get current route
 
   const toggleMenu = () => setIsOpen(!isOpen);
-
   const togglePlay = () => {
     if (isPlaying) {
       audioRef.current.pause();
@@ -35,23 +32,28 @@ function SideBar() {
     setProgress(manualChange);
   };
 
+  // Effect to handle clicking outside the sidebar
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        isOpen &&
-        sideBarRef.current &&
-        !sideBarRef.current.contains(event.target) &&
-        !menuBtnRef.current.contains(event.target)
-      ) {
+      // Check if sidebar is open and click is outside both sidebar and menu toggle button
+      if (isOpen && 
+          sidebarRef.current && 
+          !sidebarRef.current.contains(event.target) &&
+          !event.target.closest(`.${styles.menuToggle}`)) {
         setIsOpen(false);
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    // Add event listener when sidebar is open
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    // Cleanup event listener
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen]);
+  }, [isOpen, styles.menuToggle]);
 
   return (
     <>
@@ -62,11 +64,22 @@ function SideBar() {
         onEnded={() => setIsPlaying(false)}
       />
 
-      <button ref={menuBtnRef} className={styles.menuToggle} onClick={toggleMenu}>
-        <FaBars size={20} />
+      <button className={styles.menuToggle} onClick={toggleMenu}>
+        <FaBars size={20}  />
       </button>
 
-      <div ref={sideBarRef} className={`${styles.sideBar} ${isOpen ? styles.open : ''}`}>
+      {/* Dim overlay - appears when sidebar is open */}
+      {isOpen && (
+        <div 
+          className={styles.overlay} 
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      <div 
+        ref={sidebarRef}
+        className={`${styles.sideBar} ${isOpen ? styles.open : ''}`}
+      >
         <nav className={styles.navMenu}>
           <ul>
             <li>
