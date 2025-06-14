@@ -12,8 +12,8 @@ function AppLayoutAbout() {
     {
       id: "1",
       author: "mouthwithnoteeth",
-
-	  Link:'/about-post-1',
+      postname:"About",
+	    Link:'/about-post-1',
       title: "I’m from Bangalore, born and raised. Can’t say I love this place, but there are parts of it and the people here that I really do. The chaos, the food, the weirdly unpredictable weather—sometimes annoying, but it has its own charm.",
       image: "https://i.pinimg.com/736x/82/73/c2/8273c22a63cc14739f6062753abd2ef7.jpg",
 

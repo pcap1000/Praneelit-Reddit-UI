@@ -71,8 +71,12 @@ const CommunityCard = ({ posts = [] }) => {
                 >
                   <div className="post-card">
                     <div className="post-header">
+                      <div className="post-header-layertwo">
                       <span className="post-author">u/{post.author}</span>
+                      <br />
+                      <span className="post-postname">{post.postname}</span>
                       <span className="post-time">{post.timeAgo}</span>
+                      </div>
                       <button className="post-menu">⋯</button>
                     </div>
 
