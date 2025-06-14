@@ -119,7 +119,7 @@
 }
 
 .musicPlayer {
-  background-color: #1a1c23;
+  /* background-color: #1a1c23; */
   width: 90%;
   padding: 1rem;
   border-radius: 10px;
@@ -128,6 +128,10 @@
   align-items: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
   margin-bottom: 1rem; /* Added margin to separate it from the Resume button */
+  background: #6F1D1B;
+background: -moz-linear-gradient(top, #6F1D1B 0%, #121212 100%);
+background: -webkit-linear-gradient(top, #6F1D1B 0%, #121212 100%);
+background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 }
 
 .songCover {
@@ -181,13 +185,13 @@
 }
 
 .playButton {
-  color: #df121c;
+  color: white;
   font-size: 1.5rem;
 }
 
 .controlButton:hover,
 .playButton:hover {
-  color: #ff3300;
+  color: #aaa;
 }
 
 .resumeButton {
