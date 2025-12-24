@@ -138,7 +138,7 @@ function SideBar() {
 
               <div className={styles.songDetails}>
                 <h3 className={styles.musicname}>
-                  {lastTrack.name.length > 15 ? lastTrack.name.slice(0, 15) + "…" : lastTrack.name}
+                  {lastTrack.name.length > 17 ? lastTrack.name.slice(0, 17) + "…" : lastTrack.name}
                 </h3>
                 <p className={styles.artistname}>
                   {lastTrack.artist["#text"].length > 15

@@ -258,6 +258,7 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 @media (max-width: 768px) {
   .menuToggle {
     display: block;
+    margin-top: 5px;
   }
 
   .sideBar {
@@ -365,7 +366,10 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #f3f4f7;
+  color: #df121c;
+}
+.lastPlayedTitle:hover{
+  color: #ff6600;
 }
 
 .songCover {

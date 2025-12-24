@@ -5,11 +5,11 @@ function Logo() {
   return (
     <div className={styles.logoContainer}>
       <Link to="/">
-        <img
+        {/* <img
           className={styles.logo}
           src="./img/logoimage.png"
           alt="Reddit Logo"
-        />
+        /> */}
       </Link>
       <Link to="/">
         <img

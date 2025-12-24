@@ -10,14 +10,15 @@
 .logo {
   height: 5rem;
   /* margin-left: 25%; */
-  max-height: 100%;
-  padding-left: 1vw;
+  max-height: 120%;
+  padding-left: 1.5vw;
 }
 
 .name {
   /* margin-left: 10%; */
   width: 12rem;
-  max-width: 100%;
+  max-width: 130%;
+  padding-left: 3vw;
 }
 
 @media (max-width: 770px) {
@@ -26,6 +27,5 @@
     justify-content: space-around;
     padding-left: 2rem; 
   }
-
 
 }
