@@ -145,22 +145,7 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
   text-align: center;
 }
 
-.songDetails h3 {
-  font-size: 1rem;
-  color: white;
-  margin: 0;
-}
 
-.songDetails p {
-  font-size: 0.9rem;
-  color: #aaa;
-  margin: 0;
-}
-
-.progressBar {
-  width: 100%;
-  margin-top: 0.5rem;
-}
 
 .slider {
   width: 100%;
@@ -368,4 +353,48 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 .overlay {
   backdrop-filter: blur(2px); /* Modern browsers - adds blur effect */
   -webkit-backdrop-filter: blur(2px); /* Safari support */
+}
+
+.lastPlayed{
+  font-family: "WDXL Lubrifont TC", sans-serif;
+}
+.lastPlayedTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #f3f4f7;
+}
+
+.songCover {
+  width: clamp(65px, 20vw, 120px);
+  height: clamp(65px, 20vw, 120px);
+  border-radius: clamp(8px, 2vw, 12px);
+  object-fit: cover;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+.songDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+  font-family: "WDXL Lubrifont TC", sans-serif;
+}
+
+.musicname {
+  font-size: 150%;   /* Bigger than artist */
+  font-weight: 500;  /* Bold to stand out */
+  line-height: 1.1;
+  color: #f3f4f7;
+}
+
+.artistname {
+  font-size: 100%;   /* Smaller than song */
+  font-weight: 100;
+  color: #cfcfcf;
+  line-height: 1.2;
+  font-family: sans-serif;
+  margin-block: 5%;
 }

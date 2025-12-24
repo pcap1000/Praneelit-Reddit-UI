@@ -1,111 +1,114 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "../styles/SideBar.module.css";
-import { FaUserAlt, FaProjectDiagram, FaPenNib, FaBars, FaPlay, FaPause } from "react-icons/fa";
+import {
+  FaUserAlt,
+  FaProjectDiagram,
+  FaPenNib,
+  FaBars,
+  FaMusic
+} from "react-icons/fa";
+
+const API_KEY = import.meta.env.VITE_LASTFM_API_KEY;
+const USER = import.meta.env.VITE_LASTFM_USER;
+
 
 function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const audioRef = useRef(null);
-  const sidebarRef = useRef(null); // Reference for the sidebar container
-  const location = useLocation(); // Get current route
+  const [lastTrack, setLastTrack] = useState(null);
+
+  const sidebarRef = useRef(null);
+  const location = useLocation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const togglePlay = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
 
-  const handleTimeUpdate = () => {
-    const { currentTime, duration } = audioRef.current;
-    setProgress((currentTime / duration) * 100);
-  };
-
-  const handleProgressChange = (e) => {
-    const manualChange = Number(e.target.value);
-    audioRef.current.currentTime = (manualChange / 100) * audioRef.current.duration;
-    setProgress(manualChange);
-  };
-
-  // Effect to handle clicking outside the sidebar
+  // Fetch last played song from Last.fm
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      // Check if sidebar is open and click is outside both sidebar and menu toggle button
-      if (isOpen && 
-          sidebarRef.current && 
-          !sidebarRef.current.contains(event.target) &&
-          !event.target.closest(`.${styles.menuToggle}`)) {
+    async function fetchLastPlayed() {
+      try {
+        const res = await fetch(
+          `https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&limit=1&format=json`
+        );
+        const data = await res.json();
+
+        const track = data.recenttracks.track[0];
+        setLastTrack(track);
+      } catch (err) {
+        console.error("Last.fm fetch error:", err);
+      }
+    }
+
+    fetchLastPlayed();
+  }, []);
+
+  // Close sidebar on outside click
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        isOpen &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(e.target) &&
+        !e.target.closest(`.${styles.menuToggle}`)
+      ) {
         setIsOpen(false);
       }
     };
 
-    // Add event listener when sidebar is open
     if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
-    // Cleanup event listener
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isOpen, styles.menuToggle]);
+  }, [isOpen]);
 
   return (
     <>
-      <audio 
-        ref={audioRef} 
-        src="./img/Warriors.mp3"
-        onTimeUpdate={handleTimeUpdate}
-        onEnded={() => setIsPlaying(false)}
-      />
-
       <button className={styles.menuToggle} onClick={toggleMenu}>
-        <FaBars size={20}  />
+        <FaBars size={20} />
       </button>
 
-      {/* Dim overlay - appears when sidebar is open */}
       {isOpen && (
-        <div 
-          className={styles.overlay} 
-          onClick={() => setIsOpen(false)}
-        />
+        <div className={styles.overlay} onClick={() => setIsOpen(false)} />
       )}
 
-      <div 
+      <div
         ref={sidebarRef}
-        className={`${styles.sideBar} ${isOpen ? styles.open : ''}`}
+        className={`${styles.sideBar} ${isOpen ? styles.open : ""}`}
       >
+        {/* Navigation */}
         <nav className={styles.navMenu}>
           <ul>
             <li>
-              <Link 
-                to="/" 
-                className={`${styles.navItem} ${location.pathname === "/" ? styles.active : ""}`} 
+              <Link
+                to="/"
+                className={`${styles.navItem} ${location.pathname === "/" ? styles.active : ""
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 <FaUserAlt className={styles.icon} />
                 All
               </Link>
             </li>
+
             <li>
-              <Link 
-                to="/About" 
-                className={`${styles.navItem} ${location.pathname === "/About" ? styles.active : ""}`} 
+              <Link
+                to="/About"
+                className={`${styles.navItem} ${location.pathname === "/About" ? styles.active : ""
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 <FaPenNib className={styles.icon} />
                 About
               </Link>
             </li>
+
             <li>
-              <Link 
-                to="/project" 
-                className={`${styles.navItem} ${location.pathname === "/project" ? styles.active : ""}`} 
+              <Link
+                to="/project"
+                className={`${styles.navItem} ${location.pathname === "/project" ? styles.active : ""
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 <FaProjectDiagram className={styles.icon} />
@@ -117,31 +120,37 @@ function SideBar() {
 
         <div className={styles.horizontalLine}></div>
 
-        <div className={styles.musicPlayer}>
-          <img
-            src="https://i.pinimg.com/736x/55/b0/d0/55b0d00ce6424469876d62fc4bec4881.jpg"
-            alt="Enemy Song Cover"
-            className={styles.songCover}
-          />
-          <div className={styles.songDetails}>
-            <h3>Warriors</h3>
-            <p>Imagine Dragons</p>
-          </div>
-          <div className={styles.progressBar}>
-            <input 
-              type="range" 
-              min="0" 
-              max="100" 
-              value={progress} 
-              className={styles.slider} 
-              onChange={handleProgressChange}
-            />
-          </div>
-          <div className={styles.controls}>
-            <button className={styles.playButton} onClick={togglePlay}>
-              {isPlaying ? <FaPause /> : <FaPlay />}
-            </button>
-          </div>
+        {/* Last Played Song */}
+        <div className={styles.lastPlayed}>
+          <h4 className={styles.lastPlayedTitle}>
+            {/* <FaMusic />  */}
+            Last Played
+          </h4>
+
+          {lastTrack ? (
+            <div className={styles.trackCard}>
+              <img
+                src={lastTrack.image[2]["#text"]}
+                alt="Album Art"
+                className={styles.songCover}
+              />
+
+              <div className={styles.songDetails}>
+                <h3 className={styles.musicname}>
+                  {lastTrack.name.length > 15 ? lastTrack.name.slice(0, 15) + "…" : lastTrack.name}
+                </h3>
+                <p className={styles.artistname}>
+                  {lastTrack.artist["#text"].length > 15
+                    ? lastTrack.artist["#text"].slice(0, 15) + "…"
+                    : lastTrack.artist["#text"]}
+                </p>
+              </div>
+
+
+            </div>
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
 
         <div className={styles.horizontalLine}></div>
