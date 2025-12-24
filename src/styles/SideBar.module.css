@@ -93,8 +93,8 @@
   color: #f3f4f7;
   font-size: 2rem;
   transition: color 0.2s;
-  font-family:  "WDXL Lubrifont TC", sans-serif;
-    font-weight: 400;
+  font-family: "WDXL Lubrifont TC", sans-serif;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -114,7 +114,7 @@
 .horizontalLine {
   width: 100%;
   height: 1px;
-  background-color: #333948;
+  background-color: #727680;
   margin: 1rem 0;
 }
 
@@ -127,11 +127,12 @@
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1rem; /* Added margin to separate it from the Resume button */
+  margin-bottom: 1rem;
+  /* Added margin to separate it from the Resume button */
   background: #6F1D1B;
-background: -moz-linear-gradient(top, #6F1D1B 0%, #121212 100%);
-background: -webkit-linear-gradient(top, #6F1D1B 0%, #121212 100%);
-background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
+  background: -moz-linear-gradient(top, #6F1D1B 0%, #121212 100%);
+  background: -webkit-linear-gradient(top, #6F1D1B 0%, #121212 100%);
+  background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 }
 
 .songCover {
@@ -180,7 +181,7 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 }
 
 .resumeButton {
-  font-family:'WDXL Lubrifont TC','Roboto', sans-serif;
+  font-family: 'WDXL Lubrifont TC', 'Roboto', sans-serif;
   background-color: #df121c;
   color: white;
   font-size: 1rem;
@@ -199,10 +200,12 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 
 .sideBar {
   position: fixed;
-  top: 60px; /* Added space for header */
+  top: 60px;
+  /* Added space for header */
   left: 0;
   padding: 1rem;
-  height: calc(100vh - 60px); /* Adjusted height to account for header */
+  height: calc(100vh - 60px);
+  /* Adjusted height to account for header */
   width: 20rem;
   background-color: #0E1113;
   border-right: 1px solid #333948;
@@ -274,7 +277,7 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 
 .sideBar {
   position: fixed;
-  top: 6rem; 
+  top: 6rem;
   left: 0;
   height: calc(100vh - 6rem);
   width: 20vw;
@@ -327,8 +330,10 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  z-index: 998; /* Should be below sidebar but above other content */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black */
+  z-index: 998;
+  /* Should be below sidebar but above other content */
   cursor: pointer;
   transition: opacity 0.3s ease;
 }
@@ -347,30 +352,34 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 
 /* Make sure sidebar has higher z-index than overlay */
 .sideBar {
-  z-index: 999; /* Higher than overlay */
+  z-index: 999;
+  /* Higher than overlay */
 }
 
 /* Optional: Add blur effect to background content */
 .overlay {
-  backdrop-filter: blur(2px); /* Modern browsers - adds blur effect */
-  -webkit-backdrop-filter: blur(2px); /* Safari support */
+  backdrop-filter: blur(2px);
+  /* Modern browsers - adds blur effect */
+  -webkit-backdrop-filter: blur(2px);
+  /* Safari support */
 }
 
-.lastPlayed{
+.lastPlayed {
   font-family: "WDXL Lubrifont TC", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
 }
+
 .lastPlayedTitle {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  font-weight: 600;
+  font-size: 2rem;
+  font-weight: 400;
   margin-bottom: 1rem;
-  color: #df121c;
+  color: #fcfcfc;
 }
-.lastPlayedTitle:hover{
-  color: #ff6600;
-}
+
 
 .songCover {
   width: clamp(90px, 28vw, 120px);
@@ -389,14 +398,17 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 }
 
 .musicname {
-  font-size: 180%;   /* Bigger than artist */
-  font-weight: 500;  /* Bold to stand out */
+  font-size: 180%;
+  /* Bigger than artist */
+  font-weight: 500;
+  /* Bold to stand out */
   line-height: 1.1;
   color: #f3f4f7;
 }
 
 .artistname {
-  font-size: 100%;   /* Smaller than song */
+  font-size: 100%;
+  /* Smaller than song */
   font-weight: 200;
   color: #cfcfcf;
   line-height: 1.2;
