@@ -34,7 +34,7 @@ const CommunityCard = ({ posts = [] }) => {
         </div>
         <div className="header-content">
           <div className="logo-container">
-            <img src="./img/praneelpic.jpeg" alt="Praneel pic" className="logo" />
+            <img src="https://i.pinimg.com/736x/4d/da/eb/4ddaeb21fef35836300cbb7e4edd2f22.jpg" alt="Praneel pic" className="logo" />
           </div>
           <h1 className="community-name">r/praneelchetty</h1>
           <div className="header-actions">

@@ -68,7 +68,7 @@ return (
     <div className={styles.navBar}>
       <div className={styles.leftSection}>
         <div className={styles.logoCircle}>
-          <img src="./img/praneelpic.jpeg" alt="Profile" className={styles.logoImage} />
+          <img src="https://i.pinimg.com/736x/1b/0a/9d/1b0a9de0d7ce60c310340edd4b40df30.jpg" alt="Profile" className={styles.logoImage} />
         </div>
         <div className={styles.subredditInfo}>
           <h1 className={styles.subredditName}>r/praneelchetty</h1>
