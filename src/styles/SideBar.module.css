@@ -384,7 +384,7 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 }
 
 .musicname {
-  font-size: 150%;   /* Bigger than artist */
+  font-size: 180%;   /* Bigger than artist */
   font-weight: 500;  /* Bold to stand out */
   line-height: 1.1;
   color: #f3f4f7;
@@ -392,7 +392,7 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 
 .artistname {
   font-size: 100%;   /* Smaller than song */
-  font-weight: 100;
+  font-weight: 200;
   color: #cfcfcf;
   line-height: 1.2;
   font-family: sans-serif;
