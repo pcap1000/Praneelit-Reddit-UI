@@ -50,7 +50,7 @@ const CommunityCard = ({ posts = [] }) => {
                   className={`join-btn ${activeView === 'about' ? 'active' : ''}`}
                   onClick={() => handleViewChange('about')}
                 >
-                  About
+                  Info
                 </button>
               </>
             )}
