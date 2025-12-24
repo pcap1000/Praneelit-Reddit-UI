@@ -369,13 +369,14 @@ background: linear-gradient(to bottom, #6F1D1B 0%, #121212 100%);
 }
 
 .songCover {
-  width: clamp(65px, 20vw, 120px);
-  height: clamp(65px, 20vw, 120px);
-  border-radius: clamp(8px, 2vw, 12px);
+  width: clamp(90px, 28vw, 120px);
+  height: clamp(90px, 28vw, 120px);
+  border-radius: clamp(10px, 3vw, 14px);
   object-fit: cover;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
   flex-shrink: 0;
 }
+
 .songDetails {
   display: flex;
   flex-direction: column;
