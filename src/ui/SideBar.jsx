@@ -13,6 +13,7 @@ const API_KEY = import.meta.env.VITE_LASTFM_API_KEY;
 const USER = import.meta.env.VITE_LASTFM_USER;
 
 
+
 function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [lastTrack, setLastTrack] = useState(null);
