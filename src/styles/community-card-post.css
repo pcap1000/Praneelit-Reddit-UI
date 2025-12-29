@@ -581,7 +581,7 @@
 .community-name strong {
   position: relative;
   font-weight: inherit; /* Keeps the same font weight as parent */
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .community-name strong::after {
