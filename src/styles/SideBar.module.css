@@ -364,22 +364,6 @@
   z-index: 1001;
 }
 
-@media (max-width: 768px) {
-  .menuToggle {
-    display: block;
-    margin-top: 5px;
-  }
-
-  .sideBar {
-    transform: translateX(-100%);
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .sideBar.open {
-    transform: translateX(0);
-  }
-}
 
 .sideBar {
   position: fixed;
@@ -414,17 +398,37 @@
 @media (max-width: 1160px) {
   .menuToggle {
     display: block;
+    margin-top: 5px;
+    font-size: 1rem;
   }
 
   .sideBar {
     transform: translateX(-100%);
-    width: 280px;
+    width: 250px;
   }
 
   .sideBar.open {
     transform: translateX(0);
   }
 }
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+    margin-top: 5px;
+  }
+
+  .sideBar {
+    transform: translateX(-100%);
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .sideBar.open {
+    transform: translateX(0);
+  }
+}
+
 
 /* Rest of your existing sidebar styles remain the same */
 

@@ -53,3 +53,28 @@
 .clearButton:hover {
   background-color: #555e77;
 }
+@media (max-width: 800px) {
+  .searchBar {
+    width: 90%;
+    height: 3.5rem;
+    margin-left: 0rem;
+  }
+
+  .searchInputContainer {
+    width: 100%;
+    padding-right: 0.5rem;
+  }
+
+  .searchInput {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    margin: 0.2rem 0.5rem 0 1rem;
+  }
+
+  .clearButton {
+    margin-right: 1rem;
+    padding: 0.3rem;
+  }
+}
