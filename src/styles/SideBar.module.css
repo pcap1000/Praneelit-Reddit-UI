@@ -533,3 +533,23 @@
   font-optical-sizing: auto;
 }
 
+
+
+
+/* Update resume button to have consistent margin */
+.resumeButton {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  width: 80%;
+  font-family: "Honk", monospace;
+  margin-top: auto; /* Pushes button to bottom */
+  margin-bottom: 1rem; /* Space from bottom edge */
+  flex-shrink: 0; /* Prevents button from shrinking */
+}

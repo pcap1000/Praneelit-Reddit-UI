@@ -37,7 +37,7 @@ const CommunityCard = ({ posts = [] }) => {
             <img src="https://i.pinimg.com/736x/4d/da/eb/4ddaeb21fef35836300cbb7e4edd2f22.jpg" alt="Praneel pic" className="logo" />
           </div>
           <h1 className="community-name">
-            r/<strong>praneelchetty</strong>
+            <strong><b>r/praneelchetty</b></strong>
           </h1>
           <div className="header-actions">
             {!isLargeScreen && (

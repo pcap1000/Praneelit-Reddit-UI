@@ -440,6 +440,7 @@
   .header-actions {
     width: 100%;
     justify-content: right;
+    margin-right: clamp(-10%, -1.25vw - 3.75%, -5%);
   }
 }
 
@@ -483,7 +484,7 @@
   width: 80px;
   height: 80px;
   background-color: transparent;
-  border-radius: 50%;
+  border-radius: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -580,7 +581,8 @@
 
 .community-name strong {
   position: relative;
-  font-weight: inherit; /* Keeps the same font weight as parent */
+  font-weight: inherit;
+  /* Keeps the same font weight as parent */
   font-size: 2.5rem;
 }
 
@@ -595,4 +597,8 @@
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/664131/underline.svg');
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+b {
+  font-size: 2rem;
 }
