@@ -156,7 +156,11 @@ function SideBar() {
 
         <div className={styles.horizontalLine}></div>
 
-        <button className={styles.resumeButton}>Resume</button>
+        <button className={styles.resumeButton}>
+          <span className={styles.shadow}></span>
+          <span className={styles.edge}></span>
+          <span className={styles.front}>Resume</span>
+        </button>
       </div>
     </>
   );
