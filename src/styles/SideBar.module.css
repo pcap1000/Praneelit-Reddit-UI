@@ -537,9 +537,20 @@
 
 
 /* Update resume button to have consistent margin */
-.resumeButton {
-  
+.resumeButton { 
   margin-top: auto;
-  margin-bottom: 5vh; /* Min 1rem, scales with viewport, max 4rem */
+  margin-bottom: 6vh; /* Min 1rem, scales with viewport, max 4rem */
   flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .resumeButton {
+    margin-bottom: 7rem; /* Double the space on mobile */
+  }
+}
+
+/* Optional: Even smaller devices */
+@media (max-width: 480px) {
+  .resumeButton {
+    margin-bottom: 8rem; /* Even more space on very small screens */
+  }
 }
