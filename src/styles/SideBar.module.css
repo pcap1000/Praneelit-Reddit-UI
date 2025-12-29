@@ -540,6 +540,6 @@
 .resumeButton {
   
   margin-top: auto;
-  margin-bottom: clamp(1rem, 3vh, 5rem); /* Min 1rem, scales with viewport, max 4rem */
+  margin-bottom: 5vh; /* Min 1rem, scales with viewport, max 4rem */
   flex-shrink: 0;
 }
