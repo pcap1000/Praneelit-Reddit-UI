@@ -47,7 +47,7 @@
 
 .header-content {
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
@@ -91,7 +91,7 @@
 
 .create-post-btn,
 .join-btn {
-  padding: 8px 16px;
+  padding: 8px 40px;
   border: none;
   border-radius: 10px;
   font-weight: 600;
@@ -471,7 +471,7 @@
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   max-width: 1223px;
   margin: 0 auto;
