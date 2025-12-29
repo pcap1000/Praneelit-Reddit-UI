@@ -1,3 +1,33 @@
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("/assets/fonts/Verdana/Verdana.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("/assets/fonts/Verdana/Verdana-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("/assets/fonts/Verdana/Verdana-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("/assets/fonts/Verdana/Verdana-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+
 .community-card {
   max-width: 1200px;
   margin: 0 auto;
@@ -51,6 +81,7 @@
   font-weight: bold;
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: "VerdanaLocal", sans-serif;
 }
 
 .header-actions {
@@ -206,7 +237,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding:10px;
+  padding: 10px;
   background-color: black;
   border-radius: 10px;
 }
@@ -214,7 +245,7 @@
 .sidebar-section {
   background-color: black;
 
-  
+
   border-radius: 8px;
   padding: 16px;
 }
@@ -377,43 +408,46 @@
     gap: 12px;
   }
 }
+
 /* Add to existing file */
 @media (max-width: 1000px) {
   .main-content {
     grid-template-columns: 1fr;
   }
-  
+
   .sidebar {
     order: -1;
     margin-bottom: 20px;
   }
-  
+
   .header-content {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .logo-container {
     position: static;
     margin-bottom: 10px;
-    top:-5vh;
+    top: -5vh;
   }
-  
+
   .community-name {
     margin-left: 0;
     margin-bottom: 10px;
     font-size: 2rem;
   }
-  
+
   .header-actions {
     width: 100%;
     justify-content: right;
   }
 }
+
 /* Header with image banner */
 .header {
   position: relative;
-  padding-top: 120px; /* Adjust based on banner height */
+  padding-top: 120px;
+  /* Adjust based on banner height */
 
 }
 
@@ -422,7 +456,8 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 120px; /* Adjust banner height as needed */
+  height: 120px;
+  /* Adjust banner height as needed */
   overflow: hidden;
 }
 
@@ -438,7 +473,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1223px;
   margin: 0 auto;
   padding: 0 20px 20px;
   margin-top: 1vh;
@@ -455,7 +490,8 @@
   border: 4px solid #121212;
   overflow: hidden;
   position: absolute;
-  top:1vh; /* Half outside the banner */
+  top: 1vh;
+  /* Half outside the banner */
   left: 20px;
 }
 
@@ -482,16 +518,21 @@
   
 } */
 
-.HR{
-    opacity: 0.5;
+.HR {
+  opacity: 0.5;
 }
-@media (max-width: 768px) {
-    .community-name {
-        font-size: 2rem;
-    }
-    .logo-container{
-        top:-5vh
-    }
+
+@media (max-width: 1000px) {
+  .community-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-left: 0px;
+    margin-left: 26%;
+  }
+
+  .logo-container {
+    top: -5vh
+  }
 }
 
 .post-link {
@@ -503,6 +544,7 @@
 .post-link:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
 /* 
 .community-card {
   width: 320px;
@@ -519,16 +561,20 @@
   background-color: black;
   border-radius: 10px;
 } */
-.sidebar{
-    width: 320px;
-    background-color: black;
+.sidebar {
+  width: 85%;
+  background-color: black;
+  margin-left: 9%;
 }
-.community-card{
-     background-color: #121212;
+
+.community-card {
+  background-color: #121212;
 }
+
 /* Rest of your existing community-card.css remains the same */
 /* @media (max-width: 768px) {
   .community-card {
     display: none;
   }
 } */
+

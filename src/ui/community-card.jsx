@@ -8,7 +8,7 @@ const CommunityCard = ({ posts = [] }) => {
   // Check screen size
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024); // 1024px and above for laptop+
+      setIsLargeScreen(window.innerWidth >= 1003); 
     };
 
     checkScreenSize();
