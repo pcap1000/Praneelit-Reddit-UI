@@ -538,7 +538,8 @@
 
 /* Update resume button to have consistent margin */
 .resumeButton {
-  margin-top: auto; /* Pushes button to bottom */
-  margin-bottom: 3vh; /* Space from bottom edge */
-  flex-shrink: 0; /* Prevents button from shrinking */
+  
+  margin-top: auto;
+  margin-bottom: clamp(1rem, 3vh, 5rem); /* Min 1rem, scales with viewport, max 4rem */
+  flex-shrink: 0;
 }
