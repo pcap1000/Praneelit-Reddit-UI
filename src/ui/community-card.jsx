@@ -8,12 +8,12 @@ const CommunityCard = ({ posts = [] }) => {
   // Check screen size
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsLargeScreen(window.innerWidth >= 1003); 
+      setIsLargeScreen(window.innerWidth >= 1003);
     };
 
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
-    
+
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
@@ -26,9 +26,9 @@ const CommunityCard = ({ posts = [] }) => {
       {/* Fixed Header */}
       <div className="header">
         <div className="banner-container">
-          <img 
-            src="https://styles.redditmedia.com/t5_2rn7o/styles/bannerBackgroundImage_k2h8abnl1ia21.png?width=2176&frame=1&auto=webp&s=3254d1b8d9fe42d940ea7d4fa7f728138416e05f"  
-            alt="Community banner" 
+          <img
+            src="https://styles.redditmedia.com/t5_2rn7o/styles/bannerBackgroundImage_k2h8abnl1ia21.png?width=2176&frame=1&auto=webp&s=3254d1b8d9fe42d940ea7d4fa7f728138416e05f"
+            alt="Community banner"
             className="banner-image"
           />
         </div>
@@ -36,17 +36,19 @@ const CommunityCard = ({ posts = [] }) => {
           <div className="logo-container">
             <img src="https://i.pinimg.com/736x/4d/da/eb/4ddaeb21fef35836300cbb7e4edd2f22.jpg" alt="Praneel pic" className="logo" />
           </div>
-          <h1 className="community-name">r/praneelchetty</h1>
+          <h1 className="community-name">
+            r/<strong>praneelchetty</strong>
+          </h1>
           <div className="header-actions">
             {!isLargeScreen && (
               <>
-                <button 
+                <button
                   className={`create-post-btn ${activeView === 'feed' ? 'active' : ''}`}
                   onClick={() => handleViewChange('feed')}
                 >
                   Feed
                 </button>
-                <button 
+                <button
                   className={`join-btn ${activeView === 'about' ? 'active' : ''}`}
                   onClick={() => handleViewChange('about')}
                 >
@@ -64,18 +66,18 @@ const CommunityCard = ({ posts = [] }) => {
           <div className="posts-section">
             {posts.length > 0 ? (
               posts.map((post) => (
-                <a 
-                  key={post.id} 
-                  href={post.Link} 
+                <a
+                  key={post.id}
+                  href={post.Link}
                   className="post-link"
                 >
                   <div className="post-card">
                     <div className="post-header">
                       <div className="post-header-layertwo">
-                      <span className="post-author">u/{post.author}</span>
-                      <br />
-                      <span className="post-postname">{post.postname}</span>
-                      <span className="post-time">{post.timeAgo}</span>
+                        <span className="post-author">u/{post.author}</span>
+                        <br />
+                        <span className="post-postname">{post.postname}</span>
+                        <span className="post-time">{post.timeAgo}</span>
                       </div>
                       <button className="post-menu">⋯</button>
                     </div>
@@ -110,24 +112,24 @@ const CommunityCard = ({ posts = [] }) => {
                 learning, and I enjoy building mechanical projects. I'd like to think I'm a fun person too!
               </p>
             </div>
-            <hr className="HR"/>
+            <hr className="HR" />
             {/* Community Bookmarks */}
             <div className="sidebar-section">
               <h4 className="section-title">COMMUNITY BOOKMARKS</h4>
-              <button 
+              <button
                 className="bookmark-btn"
                 onClick={() => window.open("https://github.com/pcap1000", "_blank", "noopener,noreferrer")}
               >
                 Github
               </button>
-              <button 
+              <button
                 className="bookmark-btn"
                 onClick={() => window.open("https://www.instagram.com/praneel_010/", "_blank", "noopener,noreferrer")}
               >
                 Instagram
               </button>
             </div>
-            <hr className="HR"/>
+            <hr className="HR" />
             {/* Rules */}
             <div className="sidebar-section">
               <h4 className="section-title">RULES</h4>
@@ -135,7 +137,7 @@ const CommunityCard = ({ posts = [] }) => {
                 <div className="rule-item">
                   <span className="rule-number">1</span>
                   <span className="rule-text">
-                     Build, Break, Repeat
+                    Build, Break, Repeat
                   </span>
                 </div>
                 <div className="rule-item">
