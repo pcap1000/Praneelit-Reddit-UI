@@ -105,7 +105,7 @@ const CommunityCard = ({ posts = [] }) => {
           <div className="sidebar">
             {/* Community Info */}
             <div className="sidebar-section">
-              <h3 className="sidebar-title">Praneel N Chetty</h3>
+              <h3 className="sidebar-title">PRANEEL N CHETTY</h3>
               <p className="community-description">
                 I'm a B.Tech student at Amrita University, Bengaluru, pursuing a degree in Electronics
                 and Computer Engineering (2023-2027). I'm passionate about web development and machine
@@ -115,7 +115,7 @@ const CommunityCard = ({ posts = [] }) => {
             <hr className="HR" />
             {/* Community Bookmarks */}
             <div className="sidebar-section">
-              <h4 className="section-title">COMMUNITY BOOKMARKS</h4>
+              <h4 className="sidebar-title-lower">COMMUNITY BOOKMARKS</h4>
               <button
                 className="bookmark-btn"
                 onClick={() => window.open("https://github.com/pcap1000", "_blank", "noopener,noreferrer")}
@@ -132,7 +132,7 @@ const CommunityCard = ({ posts = [] }) => {
             <hr className="HR" />
             {/* Rules */}
             <div className="sidebar-section">
-              <h4 className="section-title">RULES</h4>
+              <h4 className="sidebar-title-lower">RULES</h4>
               <div className="rules-list">
                 <div className="rule-item">
                   <span className="rule-number">1</span>

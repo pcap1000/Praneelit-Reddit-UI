@@ -239,15 +239,23 @@
 .sidebar-title {
   font-size: 1.125rem;
   font-weight: 600;
-  margin-bottom: 8px;
-  color: #d7dadc;
+  margin-bottom: 2%;
+  color: #B7CAD4;
+}
+.sidebar-title-lower {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 4%; 
+  margin-top: -4%; 
+  color: #B7CAD4;
 }
 
 .community-description {
-  font-size: 1rem;
+  font-size: 1.3rem;
   line-height: 1.5;
   color: #818384;
-  margin-bottom: 16px;
+  margin-bottom: 1.5%;
+  font-family: 'VerdanaLocal', sans-serif;
 }
 
 .section-title {
@@ -297,11 +305,12 @@
   font-weight: 600;
   color: #d7dadc;
   min-width: 20px;
+  font-size: 1rem;
 }
 
 .rule-text {
   flex: 1;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #d7dadc;
 }
 

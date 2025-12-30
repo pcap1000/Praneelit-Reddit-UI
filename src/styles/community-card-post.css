@@ -359,11 +359,12 @@
   font-weight: 600;
   color: #d7dadc;
   min-width: 20px;
+  font-size: 1rem;
 }
 
 .rule-text {
   flex: 1;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: #d7dadc;
 }
 
