@@ -120,6 +120,7 @@ function SideBar() {
         </nav>
 
         <div className={styles.horizontalLine}></div>
+        {/* <hr /> */}
 
         {/* Last Played Song */}
         <div className={styles.lastPlayed}>
@@ -155,7 +156,7 @@ function SideBar() {
         </div>
 
         <div className={styles.horizontalLine}></div>
-
+          {/* <hr /> */}
         <button className={styles.resumeButton}>
           <span className={styles.shadow}></span>
           <span className={styles.edge}></span>

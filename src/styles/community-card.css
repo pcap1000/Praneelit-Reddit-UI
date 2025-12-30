@@ -1,3 +1,34 @@
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("../data/Verdana/Verdana.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("../data/Verdana/Verdana-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("../data/Verdana/Verdana-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "VerdanaLocal";
+  src: url("../data/Verdana/Verdana-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+
 /* Base Styles */
 .community-card {
   max-width: 1200px;
@@ -161,6 +192,7 @@
 .post-author {
   color: #d7dadc;
   font-weight: 500;
+  font-family:  'VerdanaLocal', sans-serif;
 }
 
 .post-postname {
@@ -168,8 +200,7 @@
   display: flex;
   flex-direction: column;
   gap: 0px;
-  margin-bottom: 0px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #fff;
   align-items: flex-start;
   padding-top: 1vh;
@@ -191,11 +222,12 @@
 }
 
 .post-title {
-  font-size: 1.125rem;
+  font-size: 1.38rem;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 0;
   line-height: 1.4;
   color: #d7dadc;
+  font-family:  'VerdanaLocal', sans-serif;
 }
 
 .post-image-container {

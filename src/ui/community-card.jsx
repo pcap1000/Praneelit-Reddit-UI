@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import "../styles/community-card.css";
 
-const CommunityCard = ({ posts = [] }) => {
-  const [activeView, setActiveView] = useState('feed'); // 'feed' or 'about'
+const CommunityCard = ({ children }) => {
+  const [activeView, setActiveView] = useState('feed');
   const [isLargeScreen, setIsLargeScreen] = useState(false);
 
-  // Check screen size
   useEffect(() => {
     const checkScreenSize = () => {
       setIsLargeScreen(window.innerWidth >= 1003);
@@ -34,7 +33,11 @@ const CommunityCard = ({ posts = [] }) => {
         </div>
         <div className="header-content">
           <div className="logo-container">
-            <img src="https://i.pinimg.com/736x/4d/da/eb/4ddaeb21fef35836300cbb7e4edd2f22.jpg" alt="Praneel pic" className="logo" />
+            <img 
+              src="https://i.pinimg.com/736x/4d/da/eb/4ddaeb21fef35836300cbb7e4edd2f22.jpg" 
+              alt="Praneel pic" 
+              className="logo" 
+            />
           </div>
           <h1 className="community-name">
             <strong><b>r/praneelchetty</b></strong>
@@ -61,44 +64,8 @@ const CommunityCard = ({ posts = [] }) => {
       </div>
 
       <div className="main-content">
-        {/* Dynamic Posts Section - Show on large screens or when Feed is active on small screens */}
-        {(isLargeScreen || activeView === 'feed') && (
-          <div className="posts-section">
-            {posts.length > 0 ? (
-              posts.map((post) => (
-                <a
-                  key={post.id}
-                  href={post.Link}
-                  className="post-link"
-                >
-                  <div className="post-card">
-                    <div className="post-header">
-                      <div className="post-header-layertwo">
-                        <span className="post-author">u/{post.author}</span>
-                        <br />
-                        <span className="post-postname">{post.postname}</span>
-                        <span className="post-time">{post.timeAgo}</span>
-                      </div>
-                      <button className="post-menu">⋯</button>
-                    </div>
-
-                    <h2 className="post-title">{post.title}</h2>
-
-                    {post.image && (
-                      <div className="post-image-container">
-                        <img src={post.image || "/placeholder.svg"} alt="Post content" className="post-image" />
-                      </div>
-                    )}
-                  </div>
-                </a>
-              ))
-            ) : (
-              <div className="no-posts">
-                <p>No posts available. Be the first to post!</p>
-              </div>
-            )}
-          </div>
-        )}
+        {/* Children (Posts Section) - Show on large screens or when Feed is active on small screens */}
+        {(isLargeScreen || activeView === 'feed') && children}
 
         {/* Fixed Sidebar - Show on large screens or when About is active on small screens */}
         {(isLargeScreen || activeView === 'about') && (
@@ -136,9 +103,7 @@ const CommunityCard = ({ posts = [] }) => {
               <div className="rules-list">
                 <div className="rule-item">
                   <span className="rule-number">1</span>
-                  <span className="rule-text">
-                    Build, Break, Repeat
-                  </span>
+                  <span className="rule-text">Build, Break, Repeat</span>
                 </div>
                 <div className="rule-item">
                   <span className="rule-number">2</span>
@@ -158,7 +123,7 @@ const CommunityCard = ({ posts = [] }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default CommunityCard;

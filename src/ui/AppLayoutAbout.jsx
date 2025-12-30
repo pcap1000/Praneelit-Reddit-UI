@@ -1,31 +1,81 @@
-
 import { Link, Outlet } from 'react-router-dom';
 import styles from '../styles/AppLayout.module.css';
 import Header from './Header';
 import SideBar from './SideBar';
-import CommunityCard from "./community-card"
+import CommunityCard from "./community-card";
+import '../styles/community-card.css';
+import { IoLocationSharp } from "react-icons/io5";
 
 function AppLayoutAbout() {
-  const samplePosts = [
-
-
-    {
-      id: "1",
-      author: "mouthwithnoteeth",
-      postname:"About",
-	    // Link:'/about-post-1',
-      title: "I’m from Bangalore, born and raised. Can’t say I love this place, but there are parts of it and the people here that I really do. The chaos, the food, the weirdly unpredictable weather—sometimes annoying, but it has its own charm.",
-      image: "https://i.pinimg.com/736x/82/73/c2/8273c22a63cc14739f6062753abd2ef7.jpg",
-
-    },
-  ]
   return (
     <div className={styles.app}>
       <Header />
       <main className={styles.container}>
         <SideBar />
         <div className={styles.content}>
-          <CommunityCard posts={samplePosts} />
+          <CommunityCard>
+            {/* Posts Section - Full control with hardcoded content */}
+            <div className="posts-section">
+              {/* Post 1 */}
+              {/* <a href="#" className="post-link"> */}
+              <div className="post-card">
+                <div className="post-header">
+                  <div className="post-header-layertwo">
+                    <span className="post-author">u/mouthwithnoteeth</span>
+                    <br />
+                    <span className="post-postname" style={{ color: '#df121c' }}>About ME</span>
+                    <span className="post-time"></span>
+                  </div>
+                  <button className="post-menu">⋯</button>
+                </div>
+
+                <h2 className="post-title" style={{}}>
+                  I’m a student interested in <strong>AI and Machine Learning</strong>, especially <strong>deep learning and transformer models</strong>. I use <strong>PyTorch</strong> to build and experiment with models like <strong>LSTMs</strong> and <strong>attention-based architectures</strong>. I enjoy working on <strong>hands-on projects</strong>, exploring how models behave, and applying them to <strong>practical problems</strong>. I have experience with <strong>data preprocessing</strong>, <strong>training models</strong>, and <strong>evaluating results</strong>.
+                  <br />
+                </h2>
+
+                <div className="post-image-container">
+                  <img
+                    src="https://i.pinimg.com/736x/82/73/c2/8273c22a63cc14739f6062753abd2ef7.jpg"
+                    alt="Post content"
+                    className="post-image"
+                  />
+                </div>
+                <h2 className="post-title" style={{ fontSize: '1.6rem', fontFamily: "Teko" }}>
+                  <IoLocationSharp style={{ fontSize: "2rem", marginRight: "0.7%", color: '#df121c', marginBottom: '-0.5%' }} />Bangalore, India
+                  <br />
+                </h2>
+              </div>
+              {/* </a> */}
+
+              {/* Add more posts here as needed */}
+              {/* 
+              <a href="#" className="post-link">
+                <div className="post-card">
+                  <div className="post-header">
+                    <div className="post-header-layertwo">
+                      <span className="post-author">u/username</span>
+                      <br />
+                      <span className="post-postname">Post Name</span>
+                      <span className="post-time">2h ago</span>
+                    </div>
+                    <button className="post-menu">⋯</button>
+                  </div>
+
+                  <h2 className="post-title">Your post title here</h2>
+
+                  <div className="post-image-container">
+                    <img 
+                      src="your-image-url" 
+                      alt="Post content" 
+                      className="post-image" 
+                    />
+                  </div>
+                </div>
+              </a>
+              */}
+            </div>
+          </CommunityCard>
         </div>
       </main>
     </div>
@@ -33,47 +83,3 @@ function AppLayoutAbout() {
 }
 
 export default AppLayoutAbout;
-
-
-
-
-// import { Link, Outlet } from 'react-router-dom';
-// import styles from '../styles/AppLayout.module.css';
-// import Header from './Header';
-// import SideBar from './SideBar';
-// import CommunityCard from "./community-card"
-
-// function AppLayoutAbout() {
-//   const samplePosts = [
-//     {
-//       id: "1",
-//       author: "angryshoper",
-// 	  Link:'/project-post-1',
-//       title: "Optimizing Time-Slotted Deliveries for Post Offices and Courier Companies Managing time-window-based deliveries has always been a challenge for post offices and courier companies",
-//       image: "https://preview.redd.it/once-upon-a-time-on-tatooine-1920x1080-v0-dyn4018f8s3f1.png?width=1080&crop=smart&auto=webp&s=a1b4dafd72177a0cc9334a417dbaa78534459490",
-//     },
-
-//     {
-//       id: "3",
-//       author: "mambamentality",
-
-// 	  Link:'/about-post-1',
-//       title: "I’m from Bangalore, born and raised. Can’t say I love this place, but there are parts of it and the people here that I really do. The chaos, the food, the weirdly unpredictable weather—sometimes annoying, but it has its own charm.",
-//       image: "https://preview.redd.it/flow-field-3840-2160-v0-rxd9bw4m1u3f1.png?width=1080&crop=smart&auto=webp&s=8916f91a18ebaff2ef93a45bb34ec9e01a01458b",
-
-//     },
-//   ]
-//   return (
-//     <div className={styles.app}>
-//       <Header />
-//       <main className={styles.container}>
-//         <SideBar />
-//         <div className={styles.content}>
-//           <CommunityCard posts={samplePosts} />
-//         </div>
-//       </main>
-//     </div>
-//   );
-// }
-
-// export default AppLayoutAbout;
