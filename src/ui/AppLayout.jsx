@@ -83,7 +83,7 @@ function AppLayout() {
                     className="post-image"
                   />
                 </div>
-                <h2 className="post-title" style={{ fontSize: '1.6rem', fontFamily: "Teko" }}>
+                <h2 className="post-title-Additional" style={{ fontFamily: "Teko" }}>
                   <a
                     href="https://github.com/pcap1000?tab=repositories"
                     target="_blank"
@@ -99,7 +99,7 @@ function AppLayout() {
                         verticalAlign: "middle"
                       }}
                     />
-                    Github, Repositories
+                      <text style={{ fontFamily: "Teko" , fontSize:'1.6rem'}}>Github, Repositories</text>
                   </a>
                 </h2>
               </div>

@@ -229,6 +229,14 @@
   color: #d7dadc;
   font-family:  'VerdanaLocal', sans-serif;
 }
+.post-title-Additional {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  line-height: 1.4;
+  color: #d7dadc;
+  font-family:  'VerdanaLocal', sans-serif;
+}
 
 .post-image-container {
   margin-bottom: 16px;
