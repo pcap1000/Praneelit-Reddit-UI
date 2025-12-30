@@ -50,10 +50,10 @@ function AppLayoutProject() {
                   >
                     <FaExternalLinkAlt
                       style={{
-                        fontSize: "2rem",
+                        fontSize: "1.5rem",
                         marginRight: "1%",
                         color: '#df121c',
-                        marginBottom: '0.8%',
+                        marginBottom: '0.5rem',
                         verticalAlign: "middle"
                       }}
                     />
