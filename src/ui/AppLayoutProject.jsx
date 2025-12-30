@@ -1,4 +1,5 @@
 import { Link, Outlet } from 'react-router-dom';
+import { useState } from 'react';
 import styles from '../styles/AppLayout.module.css';
 import Header from './Header';
 import SideBar from './SideBar';
@@ -7,6 +8,17 @@ import '../styles/community-card.css';
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 function AppLayoutProject() {
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handlePostClick = (e) => {
+    // Don't trigger if clicking on the link or button
+    if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON' || e.target.closest('a')) {
+      return;
+    }
+    setShowMessage(true);
+    setTimeout(() => setShowMessage(false), 3000);
+  };
+
   return (
     <div className={styles.app}>
       <Header />
@@ -17,8 +29,28 @@ function AppLayoutProject() {
             {/* Posts Section - Full control with hardcoded content */}
             <div className="posts-section">
               {/* Post 1 */}
-              {/* <a href="#" className="post-link"> */}
-              <div className="post-card">
+              <div className="post-card" onClick={handlePostClick} style={{ cursor: 'pointer', position: 'relative' }}>
+                {/* Message inside post card */}
+                {showMessage && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    backgroundColor: 'rgba(26, 26, 27, 0.95)',
+                    color: '#fff',
+                    padding: '10px 10px',
+                    borderRadius: '8px',
+                    fontSize: '2rem',
+                    zIndex: 10,
+                    boxShadow: '0 4px 20px rgba(0,0,0,0.7)',
+                    border: '3px solid #df121c',
+                    textAlign: 'center',
+                    fontFamily:"Teko"
+                  }}>
+                    Dawg, all that ain’t working
+                  </div>
+                )}
                 <div className="post-header">
                   <div className="post-header-layertwo">
                     <span className="post-author">u/mouthwithnoteeth</span>
@@ -28,12 +60,11 @@ function AppLayoutProject() {
                   </div>
                   <button className="post-menu">⋯</button>
                 </div>
-
-                <h2 className="post-title" style={{}}>
+                
+                <h2 className="post-title">
                   Some of my projects include <strong>kanye-Percentage-YE-not-YE</strong>, a machine learning project that analyzes patterns in Kanye West's lyrics; <strong>Carbon-Counter</strong>, a Python tool that calculates and tracks carbon footprint for various activities; and <strong>Last-Mile Delivery Time Slot Optimization</strong>, a system that optimizes delivery routes and assigns time slots for urban deliveries to improve efficiency.
                 </h2>
-
-
+                
                 <div className="post-image-container">
                   <img
                     src="https://miro.medium.com/v2/resize:fit:1400/1*2tsZFK4GIUq1fHX6UpC8xA.jpeg"
@@ -41,12 +72,13 @@ function AppLayoutProject() {
                     className="post-image"
                   />
                 </div>
+                
                 <h2 className="post-title" style={{ fontSize: '1.6rem', fontFamily: "Teko" }}>
                   <a
                     href="https://github.com/pcap1000?tab=repositories"
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ textDecoration: 'none' }}
+                    style={{ textDecoration: 'none', color: 'inherit' }}
                   >
                     <FaExternalLinkAlt
                       style={{
@@ -57,39 +89,35 @@ function AppLayoutProject() {
                         verticalAlign: "middle"
                       }}
                     />
+                    Github, Repositories
                   </a>
-                  Github, Repositories
                   <br />
                 </h2>
-
               </div>
-              {/* </a> */}
 
               {/* Add more posts here as needed */}
               {/* 
-              <a href="#" className="post-link">
-                <div className="post-card">
-                  <div className="post-header">
-                    <div className="post-header-layertwo">
-                      <span className="post-author">u/username</span>
-                      <br />
-                      <span className="post-postname">Post Name</span>
-                      <span className="post-time">2h ago</span>
-                    </div>
-                    <button className="post-menu">⋯</button>
+              <div className="post-card" onClick={handlePostClick} style={{ cursor: 'pointer' }}>
+                <div className="post-header">
+                  <div className="post-header-layertwo">
+                    <span className="post-author">u/mouthwithnoteeth</span>
+                    <br />
+                    <span className="post-postname">Projects</span>
+                    <span className="post-time">2h ago</span>
                   </div>
-
-                  <h2 className="post-title">Your post title here</h2>
-
-                  <div className="post-image-container">
-                    <img 
-                      src="your-image-url" 
-                      alt="Post content" 
-                      className="post-image" 
-                    />
-                  </div>
+                  <button className="post-menu">⋯</button>
                 </div>
-              </a>
+
+                <h2 className="post-title">Your project title here</h2>
+
+                <div className="post-image-container">
+                  <img 
+                    src="your-image-url" 
+                    alt="Post content" 
+                    className="post-image"
+                  />
+                </div>
+              </div>
               */}
             </div>
           </CommunityCard>
