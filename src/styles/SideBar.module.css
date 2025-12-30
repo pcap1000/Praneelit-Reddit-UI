@@ -103,9 +103,10 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.navItem:hover {
-  background-color: #1a1f24;
-  /* transform: translateX(4px); */
+
+.active {
+  /* background-color: #2a3138; */
+  background-color: #1a1a1b;
 }
 
 

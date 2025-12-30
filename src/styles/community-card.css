@@ -241,6 +241,7 @@
   font-weight: 600;
   margin-bottom: 2%;
   color: #B7CAD4;
+  font-family: 'VerdanaLocal', sans-serif;
 }
 .sidebar-title-lower {
   font-size: 1.125rem;
@@ -248,6 +249,7 @@
   margin-bottom: 4%; 
   margin-top: -4%; 
   color: #B7CAD4;
+  font-family: 'VerdanaLocal', sans-serif;
 }
 
 .community-description {
@@ -277,6 +279,7 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
   margin-bottom: 1vh;
+  font-family: 'VerdanaLocal', sans-serif;
 }
 
 .bookmark-btn:hover {
@@ -306,12 +309,14 @@
   color: #d7dadc;
   min-width: 20px;
   font-size: 1rem;
+  font-family: 'VerdanaLocal', sans-serif;
 }
 
 .rule-text {
   flex: 1;
   font-size: 1rem;
   color: #d7dadc;
+  font-family: 'VerdanaLocal', sans-serif;
 }
 
 .HR {
