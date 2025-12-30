@@ -89,7 +89,7 @@ function AppLayoutProject() {
                         verticalAlign: "middle"
                       }}
                     />
-                    Github, Repositories
+                    <text style={{ fontFamily: "Teko" , fontSize:'1.6rem'}}>Github, Repositories</text>
                   </a>
                   <br />
                 </h2>
