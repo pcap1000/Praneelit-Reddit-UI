@@ -62,7 +62,7 @@ function AppLayout() {
                     textAlign: 'center',
                     fontFamily: "Teko"
                   }}>
-                    Dawg, all that ain't working
+                    Kindly avoid touching that area, as it is not working
                   </div>
                 )}
                 <div className="post-header">
@@ -111,7 +111,7 @@ function AppLayout() {
                     textAlign: 'center',
                     fontFamily: "Teko"
                   }}>
-                    Dawg, all that ain't working
+                    Kindly avoid touching that area, as it is not working
                   </div>
                 )}
                 <div className="post-header">
