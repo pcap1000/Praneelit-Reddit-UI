@@ -34,7 +34,7 @@ const CommunityCard = ({ children }) => {
         <div className="header-content">
           <div className="logo-container">
             <img 
-              src="https://i.pinimg.com/736x/4d/da/eb/4ddaeb21fef35836300cbb7e4edd2f22.jpg" 
+              src="https://i.pinimg.com/236x/b2/f1/01/b2f101003bd626231e5ef7fd210705c2.jpg" 
               alt="Praneel pic" 
               className="logo" 
             />
